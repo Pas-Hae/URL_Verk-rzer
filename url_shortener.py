@@ -32,9 +32,12 @@ if __name__ == "__main__":
     api_token = "8c74d6cad814d10fc94e95f16d03b947c22f08e8"
     
     # Die lange URL
-    long_url = "https://www.example.com/sehr/langer/link"
+    long_url = input("lange URL")
 
     short_url = shorten_url(long_url, api_token)
     
     # Ausgabe des verkürzten URLs
     print(f"Verkürzter URL: {short_url}")
+
+    with open("verkuerzte_links.txt", "a") as f:
+        f.write(f"{long_url} wurde verkürzt zu: {short_url}\n")
